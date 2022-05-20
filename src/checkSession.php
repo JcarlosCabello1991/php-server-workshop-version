@@ -5,7 +5,7 @@ function checkSession(){
 
     $urlFile = basename($_SERVER['REQUEST_URI'],'?' .$_SERVER['QUERY_STRING']);
 
-    if($urlFile == "index.php"){
+    if($urlFile == "index1.php"){
         if(isset($_SESSION["email"])){
             header("Location:./panel.php");
         }else{
@@ -35,12 +35,12 @@ function verifyInputs(){
         }else{
             $alert = "incorrect email";
             $_SESSION["loginError"] = "Incorrect password";
-            header("Location:./index.php");
+            header("Location:./index1.php?error-1");
         }
     }else{
         $alert = "incorrect email";
         $_SESSION["loginError"] = "Incorrect email";
-        header("Location:./index.php");
+        header("Location:./index1.php");
     }
 }
 
@@ -58,7 +58,7 @@ function logOutSession(){
         $params["httponly"]);
     }
     session_destroy();
-    header("Location:./index.php?logout=true");
+    header("Location:./index1.php?logout=true");
 }
 
 function checkLoginError(){

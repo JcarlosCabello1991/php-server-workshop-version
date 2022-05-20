@@ -12,7 +12,7 @@
 <?php
         session_start();
         if(!isset($_SESSION["emailUser"])){
-            header("Location: ./index.php");
+            header("Location: ./index1.php");
         }else{
             $email = $_SESSION["emailUser"];
             $name = explode("@", $email)[0];
